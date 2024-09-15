@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+
+<p>Enter a number:</p>
+
+<input id="numberInput">
+<button type="button" onclick="displayMultiplicationTable()">Show Table</button>
+
+<p id="multiplicationResult"></p>
+
+
+<script>
+function displayMultiplicationTable() {
+    var number = document.getElementById('numberInput').value;
+    var result = document.getElementById('multiplicationResult');
+
+    
+    number = Number(number);
+
+    
+    result.innerHTML = "";
+
+    if (isNaN(number)) {
+        result.innerHTML = "Invalid input. Please enter a valid number.";
+    } else {
+        for (let i = 1; i <= 10; i++) {
+            result.innerHTML += `${number} x ${i} = ${number * i}<br>`;
+        }
+    }
+}
+</script>
+</body>
+</html>
